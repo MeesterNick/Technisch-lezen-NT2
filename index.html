@@ -1,83 +1,125 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>NT2 Technisch Lezen</title>
+<title>NT2 Lezen</title>
 <style>
+
 body {
+    margin: 0;
     font-family: Arial;
     text-align: center;
-    background-color: #f0f8ff;
+    background-color: #f4fbff;
 }
-h1 {
-    color: #2c6e91;
+
+/* MENU BALK */
+.navbar {
+    background-color: #2c6e91;
+    overflow: hidden;
 }
+
+.navbar a {
+    float: left;
+    font-size: 18px;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 18px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    cursor: pointer;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #1f4f69;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* INHOUD */
+.content {
+    padding: 40px;
+}
+
 .woord {
     display: inline-block;
     margin: 20px;
     font-size: 28px;
 }
-img {
-    width: 80px;
-    display: block;
-    margin: 10px auto;
-}
-button {
-    padding: 10px 20px;
-    font-size: 18px;
-    margin: 10px;
-}
-#timer {
-    font-size: 24px;
-    color: red;
-}
+
 </style>
 </head>
 
 <body>
 
-<h1>Korte klank i</h1>
+<div class="navbar">
+  <a href="#" onclick="showHome()">Home</a>
+  
+  <div class="dropdown">
+    <button class="dropbtn">Klanken ▼</button>
+    <div class="dropdown-content">
+      <a href="#" onclick="showI()">Korte i</a>
+      <a href="#">Lange aa</a>
+      <a href="#">Korte o</a>
+    </div>
+  </div>
+</div>
 
-<div id="timer">60</div>
-
-<div id="woorden"></div>
-
-<button onclick="startTimer()">Start 1 minuut</button>
-<button onclick="shuffle()">Nieuwe rij</button>
+<div class="content" id="main">
+    <h1>Welkom bij NT2 Lezen</h1>
+    <p>Kies een klank in het menu.</p>
+</div>
 
 <script>
-let woorden = [
-{tekst:"vis", plaatje:"https://cdn.pixabay.com/photo/2013/07/13/10/07/fish-156423_1280.png"},
-{tekst:"kip", plaatje:"https://cdn.pixabay.com/photo/2013/07/13/10/07/chicken-156417_1280.png"},
-{tekst:"lip", plaatje:"https://cdn.pixabay.com/photo/2016/03/31/19/14/lips-1296096_1280.png"},
-{tekst:"pit", plaatje:"https://cdn.pixabay.com/photo/2016/03/31/19/58/peach-1297544_1280.png"},
-{tekst:"ik", plaatje:"https://cdn.pixabay.com/photo/2014/04/03/11/50/person-312655_1280.png"}
-];
 
-function shuffle() {
-    let shuffled = woorden.sort(() => 0.5 - Math.random());
-    let output = "";
-    shuffled.forEach(w => {
-        output += `<div class="woord">
-                    ${w.tekst}
-                    <img src="${w.plaatje}">
-                   </div>`;
+function showHome(){
+    document.getElementById("main").innerHTML =
+    "<h1>Welkom bij NT2 Lezen</h1><p>Kies een klank in het menu.</p>";
+}
+
+function showI(){
+    let woorden = ["ik","vis","kip","pit","lip","zit"];
+    let output = "<h1>Korte klank i</h1>";
+    
+    woorden.forEach(w => {
+        output += "<div class='woord'>" + w + "</div>";
     });
-    document.getElementById("woorden").innerHTML = output;
+    
+    document.getElementById("main").innerHTML = output;
 }
 
-function startTimer() {
-    let tijd = 60;
-    let interval = setInterval(function(){
-        tijd--;
-        document.getElementById("timer").innerHTML = tijd;
-        if(tijd <= 0){
-            clearInterval(interval);
-            alert("Tijd is om!");
-        }
-    },1000);
-}
-
-shuffle();
 </script>
 
 </body>
