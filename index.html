@@ -106,32 +106,35 @@ body {
   <a href="#" onclick="showHome()">Home</a>
 
   <!-- Lezen -->
-  <div class="dropdown">
-    <button class="dropbtn">Lezen ▼</button>
-    <div class="dropdown-content">
-      <div class="dropdown">
-        <a href="#" onclick="showGroep(3)">Groep 3</a>
-        <div class="dropdown-content">
-          <a href="#" onclick="showKern(3,1)">Kern 1</a>
-          <a href="#" onclick="showKern(3,2)">Kern 2</a>
-          <a href="#" onclick="showKern(3,3)">Kern 3</a>
-          <a href="#" onclick="showKern(3,4)">Kern 4</a>
-          <a href="#" onclick="showKern(3,5)">Kern 5</a>
-          <a href="#" onclick="showKern(3,6)">Kern 6</a>
-          <a href="#" onclick="showKern(3,7)">Kern 7</a>
-          <a href="#" onclick="showKern(3,8)">Kern 8</a>
-          <a href="#" onclick="showKern(3,9)">Kern 9</a>
-          <a href="#" onclick="showKern(3,10)">Kern 10</a>
-          <a href="#" onclick="showKern(3,11)">Kern 11</a>
-        </div>
+<div class="dropdown">
+  <button class="dropbtn">Lezen ▼</button>
+  <div class="dropdown-content">
+    <!-- Groep 3 met nested kernen -->
+    <div class="dropdown">
+      <a href="#">Groep 3</a>
+      <div class="dropdown-content">
+        <a href="#" onclick="showKern(3,1)">Kern 1</a>
+        <a href="#" onclick="showKern(3,2)">Kern 2</a>
+        <a href="#" onclick="showKern(3,3)">Kern 3</a>
+        <a href="#" onclick="showKern(3,4)">Kern 4</a>
+        <a href="#" onclick="showKern(3,5)">Kern 5</a>
+        <a href="#" onclick="showKern(3,6)">Kern 6</a>
+        <a href="#" onclick="showKern(3,7)">Kern 7</a>
+        <a href="#" onclick="showKern(3,8)">Kern 8</a>
+        <a href="#" onclick="showKern(3,9)">Kern 9</a>
+        <a href="#" onclick="showKern(3,10)">Kern 10</a>
+        <a href="#" onclick="showKern(3,11)">Kern 11</a>
       </div>
-      <a href="#" onclick="showGroep(4)">Groep 4</a>
-      <a href="#" onclick="showGroep(5)">Groep 5</a>
-      <a href="#" onclick="showGroep(6)">Groep 6</a>
-      <a href="#" onclick="showGroep(7)">Groep 7</a>
-      <a href="#" onclick="showGroep(8)">Groep 8</a>
     </div>
+
+    <!-- Andere groepen -->
+    <a href="#" onclick="showGroep(4)">Groep 4</a>
+    <a href="#" onclick="showGroep(5)">Groep 5</a>
+    <a href="#" onclick="showGroep(6)">Groep 6</a>
+    <a href="#" onclick="showGroep(7)">Groep 7</a>
+    <a href="#" onclick="showGroep(8)">Groep 8</a>
   </div>
+</div>
 
   <!-- SPELLING -->
   <div class="dropdown">
