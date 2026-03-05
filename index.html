@@ -203,9 +203,17 @@ function showSpelling(groep){
 }
 
 function showWoordenschat(groep){
-    document.getElementById("main").innerHTML =
-    "<h1>Woordenschat - Groep " + groep + "</h1>" +
-    "<p>Hier komen straks woordenschatoefeningen.</p>";
+    if(groep === 4){
+        document.getElementById("main").innerHTML =
+        "<h1>Woordenschat - Groep 4</h1>" +
+        "<p>Klik op de link om het PDF-bestand te openen:</p>" +
+        "<a href='voorbeeld.pdf' target='_blank'>Open PDF</a>";
+    } else {
+        document.getElementById("main").innerHTML =
+        "<h1>Woordenschat - Groep " + groep + "</h1>" +
+        "<p>Hier komen straks woordenschatoefeningen.</p>";
+    }
+}
 }
 
 function showKern(groep, kern){
